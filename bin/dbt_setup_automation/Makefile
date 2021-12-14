@@ -1,10 +1,10 @@
-all: init_dbt_project setup_dbt_project_file validate_conn
+all: init_dbt_project setup_dbt_project_file validate_conn copy_dbt_project_files
 
 # airflow input args
-export DBT_PROFILE_NAME=#e.g., eg_profile_name
-export DBT_PROJECT_NAME=#e.g., dbt_demo_eg
-export DBT_MODEL=#e.g., curated_db
-export PROGRAM=#e.g., DBT_DEMO_EG
+export DBT_PROFILE_NAME=dbt_svc_profile
+export DBT_PROJECT_NAME=bike_shop
+export DBT_MODEL=curated_db
+export PROGRAM=BIKE_SHOP
 
 deps:
 	$(info [+] Install dependencies (dbt))
