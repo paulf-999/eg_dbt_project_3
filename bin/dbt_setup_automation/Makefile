@@ -2,9 +2,9 @@ all: init_dbt_project setup_dbt_project_file validate_conn copy_dbt_project_file
 
 # airflow input args
 export DBT_PROFILE_NAME=dbt_svc_profile
-export DBT_PROJECT_NAME=bike_shop
+export DBT_PROJECT_NAME=bike_shop_sub_proj3
 export DBT_MODEL=curated_db
-export PROGRAM=BIKE_SHOP
+export PROGRAM=BIKE_SHOP_SUB_PROJ3
 
 deps:
 	$(info [+] Install dependencies (dbt))
@@ -54,7 +54,6 @@ copy_dbt_project_files:
 	$(info [+] Copy generated dbt project files to parent 'dbt' folder)
 	@cp -r ${DBT_PROJECT_NAME} ../../
 	@rm -r ${DBT_PROJECT_NAME}
-	@rm -r ../../${DBT_PROJECT_NAME}/dbt_sub_projects
 
 ins_sub_projects:
 	$(info [+] Install 'child' dbt projects)
